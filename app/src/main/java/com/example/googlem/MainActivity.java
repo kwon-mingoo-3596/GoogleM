@@ -1,7 +1,11 @@
 package com.example.googlem;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -20,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,18 @@ public class MainActivity extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        button2 = findViewById( R.id.button2 );
+        button2.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick(View View) {
+                Intent intent = new Intent(MainActivity.this, WebViewDemo.class );
+                startActivity( intent );
+
+            }
+        });
     }
 
     @Override
@@ -51,7 +67,9 @@ public class MainActivity extends AppCompatActivity
                 .snippet("선문대학교")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         );
+
         SMU.showInfoWindow();
+
 
 
 
@@ -96,6 +114,7 @@ public class MainActivity extends AppCompatActivity
                 .snippet("음식점")
         );
         res5.showInfoWindow();
+
 
 
         /*MarkerOptions markerOptions = new MarkerOptions();

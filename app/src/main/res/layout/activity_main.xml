@@ -4,14 +4,25 @@
     android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="457dp"
+        android:gravity="center"
+        tools:context=".MapsActivity" />
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="389dp"
+        android:layout_height="68dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:text="게시판 가기" />
 
 
 </LinearLayout>
