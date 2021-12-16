@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap mMap;
     private Button button2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +42,13 @@ public class MainActivity extends AppCompatActivity
         {
             @Override
             public void onClick(View View) {
-                Intent intent = new Intent(MainActivity.this, WebViewDemo.class );
+                Intent intent = new Intent( MainActivity.this, WebViewDemo.class );
                 startActivity( intent );
 
             }
         });
     }
+
 
     @Override
     public void onMapReady(final GoogleMap googleMap) {
@@ -67,9 +69,7 @@ public class MainActivity extends AppCompatActivity
                 .snippet("선문대학교")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
         );
-
         SMU.showInfoWindow();
-
 
 
 
@@ -116,7 +116,6 @@ public class MainActivity extends AppCompatActivity
         res5.showInfoWindow();
 
 
-
         /*MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(SMU_P);
         markerOptions.title("선문대학교");
@@ -146,5 +145,4 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
 }
